@@ -35,6 +35,12 @@
                     <span class="text">@lang("basic.attendees")</span>
                 </a>
             </li>
+            <li class="{{ Request::is('*speakers*') ? 'active' : '' }}">
+                <a href="{{route('showEventSpeakers', array('event_id' => $event->id))}}">
+                    <span class="figure"><i class="ico-user"></i></span>
+                    <span class="text">@lang("basic.speakers")</span>
+                </a>
+            </li>
             <li class="{{ Request::is('*promote*') ? 'active' : '' }} hide">
                 <a href="{{route('showEventPromote', array('event_id' => $event->id))}}">
                     <span class="figure"><i class="ico-bullhorn"></i></span>

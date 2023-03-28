@@ -20,6 +20,7 @@ use App\Http\Controllers\EventCustomizeController;
 use App\Http\Controllers\EventDashboardController;
 use App\Http\Controllers\EventOrdersController;
 use App\Http\Controllers\EventPromoteController;
+use App\Http\Controllers\EventSpeakersController;
 use App\Http\Controllers\EventSurveyController;
 use App\Http\Controllers\EventTicketsController;
 use App\Http\Controllers\EventViewController;
@@ -34,6 +35,7 @@ use App\Http\Controllers\OrganiserDashboardController;
 use App\Http\Controllers\OrganiserEventsController;
 use App\Http\Controllers\OrganiserViewController;
 use App\Http\Controllers\RemindersController;
+use App\Http\Controllers\SpeakersController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserLoginController;
 use App\Http\Controllers\UserLogoutController;
@@ -293,7 +295,6 @@ Route::group(
          * Events dashboard
          */
         Route::group(['prefix' => 'events'], function () {
-
             /*
              * ----------
              * Create Event
@@ -371,6 +372,51 @@ Route::group(
             Route::post('{event_id}/tickets/order',
                 [EventTicketsController::class, 'postUpdateTicketsOrder']
             )->name('postUpdateTicketsOrder');
+
+
+            /*
+            * -------
+            * Start Speakers
+            * -------
+            */
+            Route::get('{event_id}/speakers',
+                [EventSpeakersController::class, 'showEventSpeakers']
+            )->name('showEventSpeakers');
+
+            Route::get('{event_id}/speakers/add',
+                [EventSpeakersController::class, 'showAddNewSpeaker']
+            )->name('showAddNewSpeaker');
+            Route::post('{event_id}/speakers/add',
+                [EventSpeakersController::class, 'postSpeaker']
+            )->name('postSpeaker');
+
+            Route::get('{event_id}/speakers/{speaker_id}/edit',
+                [EventSpeakersController::class, 'showEditSpeaker']
+            )->name('showEditSpeaker');
+            Route::post('{event_id}/speakers/{speaker_id}/edit',
+                [EventSpeakersController::class, 'postEditSpeaker']
+            )->name('postEditSpeaker');
+
+            Route::get('{event_id}/speakers/{speaker_id}/delete',
+                [EventSpeakersController::class, 'showDeleteSpeaker']
+            )->name('showDeleteSpeaker');
+            Route::post('{event_id}/speakers/{speaker_id}/delete',
+                [EventSpeakersController::class, 'postDeleteSpeaker']
+            )->name('postDeleteSpeaker');
+
+            Route::get('{event_id}/speakers/print',
+                [EventSpeakersController::class, 'showPrintSpeakers']
+            )->name('showPrintSpeakers');
+
+            Route::get('{event_id}/speakers/export/{export_as?}',
+                [EventSpeakersController::class, 'showExportSpeakers']
+            )->name('showExportSpeakers');
+            /*
+           * -------
+           * End Speakers
+           * -------
+           */
+
 
             /*
              * -------
@@ -618,6 +664,7 @@ Route::group(
             Route::post('{event_id}/question/{question_id}/enable',
                 [EventSurveyController::class, 'postEnableQuestion']
             )->name('postEnableQuestion');
+
 
 
             /*

@@ -27,40 +27,40 @@
                                         'rows' => 5
                                         ))  !!}
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    {!! Form::label('start_date', trans("Event.event_start_date"), array('class'=>'required control-label')) !!}
-                                    {!!  Form::text('start_date', old('start_date'),
-                                                        [
-                                                    'class'=>'form-control start hasDatepicker ',
-                                                    'data-field'=>'datetime',
-                                                    'data-startend'=>'start',
-                                                    'data-startendelem'=>'.end',
-                                                    'readonly'=>''
+{{--                        <div class="row">--}}
+{{--                            <div class="col-sm-6">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    {!! Form::label('start_date', trans("Event.event_start_date"), array('class'=>'required control-label')) !!}--}}
+{{--                                    {!!  Form::text('start_date', old('start_date'),--}}
+{{--                                                        [--}}
+{{--                                                    'class'=>'form-control start hasDatepicker ',--}}
+{{--                                                    'data-field'=>'datetime',--}}
+{{--                                                    'data-startend'=>'start',--}}
+{{--                                                    'data-startendelem'=>'.end',--}}
+{{--                                                    'readonly'=>''--}}
 
-                                                ])  !!}
-                                </div>
-                            </div>
+{{--                                                ])  !!}--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    {!!  Form::label('end_date', trans("Event.event_end_date"),
-                                                [
-                                            'class'=>'required control-label '
-                                        ])  !!}
+{{--                            <div class="col-sm-6">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    {!!  Form::label('end_date', trans("Event.event_end_date"),--}}
+{{--                                                [--}}
+{{--                                            'class'=>'required control-label '--}}
+{{--                                        ])  !!}--}}
 
-                                    {!!  Form::text('end_date', old('end_date'),
-                                                [
-                                            'class'=>'form-control end hasDatepicker ',
-                                            'data-field'=>'datetime',
-                                            'data-startend'=>'end',
-                                            'data-startendelem'=>'.start',
-                                            'readonly'=> ''
-                                        ])  !!}
-                                </div>
-                            </div>
-                        </div>
+{{--                                    {!!  Form::text('end_date', old('end_date'),--}}
+{{--                                                [--}}
+{{--                                            'class'=>'form-control end hasDatepicker ',--}}
+{{--                                            'data-field'=>'datetime',--}}
+{{--                                            'data-startend'=>'end',--}}
+{{--                                            'data-startendelem'=>'.start',--}}
+{{--                                            'readonly'=> ''--}}
+{{--                                        ])  !!}--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="form-group">
                             {!! Form::label('event_image', trans("Event.event_image"), array('class'=>'control-label ')) !!}
                             {!! Form::styledFile('event_image') !!}

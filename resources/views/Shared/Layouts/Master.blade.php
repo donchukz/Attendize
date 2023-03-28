@@ -32,7 +32,7 @@
 
     <!--rtl-style-->
     @if (config('app.locale_dir') =='rtl')
-        {!! Html::style(config('attendize.cdn_url_static_assets').'/assets/stylesheet/application-rtl.css') !!}    
+        {!! Html::style(config('attendize.cdn_url_static_assets').'/assets/stylesheet/application-rtl.css') !!}
     @endif
     <!--/rtl-style-->
 
@@ -69,15 +69,15 @@
                             @lang("Top.create_organiser")
                         </a>
                     </li>
-                    @foreach($organisers as $org)
-                        <li>
-                            <a href="{{route('showOrganiserDashboard', ['organiser_id' => $org->id])}}">
-                                <i class="ico ico-building"></i> &nbsp;
-                                {{$org->name}}
-                            </a>
+{{--                    @foreach($organisers as $org)--}}
+{{--                        <li>--}}
+{{--                            <a href="{{route('showOrganiserDashboard', ['organiser_id' => $org->id])}}">--}}
+{{--                                <i class="ico ico-building"></i> &nbsp;--}}
+{{--                                {{$org->name}}--}}
+{{--                            </a>--}}
 
-                        </li>
-                    @endforeach
+{{--                        </li>--}}
+{{--                    @endforeach--}}
                     <li class="divider"></li>
 
                     <li>

@@ -301,6 +301,16 @@ class Event extends MyBaseModel
     }
 
     /**
+     * The speakers associated with the event.
+     *
+     * @return HasMany
+     */
+    public function speakers()
+    {
+        return $this->hasMany(Speaker::class);
+    }
+
+    /**
      * Get the embed html code.
      *
      * @return string
